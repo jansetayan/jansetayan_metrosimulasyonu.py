@@ -1,6 +1,6 @@
 # jansetayan_metrosimulasyonu.py
-Metro Rota Bulucu, bir metro ağında istasyonlar arasında en hızlı veya en az aktarmalı rotayı bulmanızı sağlayan bir Python programıdır. Program, bir graf veri yapısı kullanarak istasyonları ve bağlantıları yönetir.
-
+Metro Rota Bulucu
+Bu proje, metro ağı üzerinde en hızlı ve en az aktarmalı rotayı hesaplayan bir Python programıdır. Genişlik Öncelikli Arama (BFS) ve Dijkstra Algoritması kullanılarak rotalar belirlenir.
 📌 Proje Açıklaması
 Bu proje, kullanıcıya iki metro istasyonu arasındaki en hızlı ve en az aktarmalı rotayı hesaplama imkanı sunar. Projede iki farklı algoritma kullanılmıştır:
 
@@ -9,48 +9,30 @@ Genişlik Öncelikli Arama (BFS - Breadth First Search): En az aktarmalı rotay�
 Dijkstra Algoritması (Min-Heap ile): En kısa sürede ulaşılacak rotayı belirlemek için kullanılır.
 
 Metro ağında istasyonlar ve bağlantılar önceden tanımlanmıştır, ancak kullanıcı yeni istasyon ve bağlantılar ekleyerek ağı genişletebilir.
+ Kurulum ve Çalıştırma
+Gereksinimler
+Python 3 yüklü olmalıdır.
 
-🛠 Kullanılan Teknolojiler
-Bu projede Python 3 programlama dili ve aşağıdaki kütüphaneler kullanılmıştır:
-
-collections.deque → BFS algoritması için (en az aktarmalı rota)
-
-heapq → Dijkstra algoritması için (en hızlı rota)
-
-typing → Tip ipuçları için (Kodun okunabilirliğini artırmak amacıyla)
-
-📥 Kurulum ve Çalıştırma
-1️⃣ Gerekli Kütüphaneleri Kontrol Edin
-Bu proje için ekstra bir kütüphane yüklemenize gerek yoktur. Python 3 yüklü olduğundan emin olun.
-
-2️⃣ Projeyi Çalıştırın
+Çalıştırma
 Terminal veya komut satırında şu komutu çalıştırarak programı başlatabilirsiniz:
 
 bash
 Kopyala
 Düzenle
 python metro_rota.py
-Bu komut, metro ağı için tanımlanmış test senaryolarını çalıştırır ve en uygun rotaları terminalde görüntüler.
+ Özellikler
+ En az aktarmalı rota hesaplama (BFS Algoritması)
+ En hızlı rota hesaplama (Dijkstra Algoritması)
+ Metro ağına yeni istasyon ve bağlantı ekleme desteği
 
-🚆 Kullanım
-Metro Ağına İstasyon ve Bağlantı Ekleme
-Programda bir metro ağı tanımlanır ve istasyonlar bir sınıf (class) yapısıyla oluşturulur.
 
-İstasyon Ekleme: Yeni bir istasyon eklemek için istasyon_ekle() fonksiyonu kullanılır.
+==== Test Senaryoları ====
 
-Bağlantı Ekleme: İki istasyon arasında bir bağlantı oluşturmak için baglanti_ekle() fonksiyonu kullanılır.
+1. AŞTİ'den OSB'ye:
+En az aktarmalı rota: AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
+En hızlı rota (25 dakika): AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
 
-En Az Aktarmalı ve En Hızlı Rota Hesaplama
-Program, aşağıdaki fonksiyonları kullanarak iki istasyon arasındaki en uygun rotaları belirler:
+2. Batıkent'ten Keçiören'e:
+En az aktarmalı rota: Batıkent -> Demetevler -> Gar -> Keçiören
+En hızlı rota (21 dakika): Batıkent -> Demetevler -> Gar -> Keçiören
 
-1️⃣ en_az_aktarmalı_rota_bul(baslangic_id, hedef_id)
-
-En az aktarma yapılan rotayı belirler.
-
-BFS (Breadth First Search) algoritması kullanılarak hesaplanır.
-
-2️⃣ en_hizli_rota_bul(baslangic_id, hedef_id)
-
-En kısa sürede ulaşılacak rotayı belirler.
-
-Dijkstra Algoritması (Min-Heap ile) kullanılarak hesaplanır.
